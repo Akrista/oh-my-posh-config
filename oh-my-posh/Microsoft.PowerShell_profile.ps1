@@ -13,7 +13,7 @@ Import-Module oh-my-posh
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
-oh-my-posh --init --shell pwsh --config /home/akrista/Documentos/GitHub/oh-my-posh-config/ohmyposh.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config /home/akrista/Documentos/GitHub/personal_config/oh-my-posh/ohmyposh.json | Invoke-Expression
 
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
