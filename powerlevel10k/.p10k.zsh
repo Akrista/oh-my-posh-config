@@ -73,6 +73,7 @@
     luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
     jenv                    # java version from jenv (https://github.com/jenv/jenv)
     plenv                   # perl version from plenv (https://github.com/tokuhirom/plenv)
+    perlbrew                # perl version from perlbrew (https://github.com/gugod/App-perlbrew)
     phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
     scalaenv                # scala version from scalaenv (https://github.com/scalaenv/scalaenv)
     haskell_stack           # haskell version from stack (https://haskellstack.org/)
@@ -84,6 +85,7 @@
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
+    toolbox                 # toolbox name (https://github.com/containers/toolbox)
     context                 # user@hostname
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
@@ -1201,6 +1203,16 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_PLENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
+  ###########[ perlbrew: perl version from perlbrew (https://github.com/gugod/App-perlbrew) ]############
+  # Perlbrew color.
+  typeset -g POWERLEVEL9K_PERLBREW_FOREGROUND=67
+  # Show perlbrew version only when in a perl project subdirectory.
+  typeset -g POWERLEVEL9K_PERLBREW_PROJECT_ONLY=true
+  # Don't show "perl-" at the front.
+  typeset -g POWERLEVEL9K_PERLBREW_SHOW_PREFIX=false
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_PERLBREW_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
   ############[ phpenv: php version from phpenv (https://github.com/phpenv/phpenv) ]############
   # PHP color.
   typeset -g POWERLEVEL9K_PHPENV_FOREGROUND=0
@@ -1441,7 +1453,7 @@
   ##########[ gcloud: google cloud account and project (https://cloud.google.com/) ]###########
   # Show gcloud only when the the command you are typing invokes one of these tools.
   # Tip: Remove the next line to always show gcloud.
-  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs'
+  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs|gsutil'
   # Google cloud color.
   typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=7
   typeset -g POWERLEVEL9K_GCLOUD_BACKGROUND=4
@@ -1534,6 +1546,17 @@
   #
   # Note: ${VARIABLE//\%/%%} expands to ${VARIABLE} with all occurrences of '%' replaced by '%%'.
   typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_CONTENT_EXPANSION='${P9K_GOOGLE_APP_CRED_PROJECT_ID//\%/%%}'
+
+  ##############[ toolbox: toolbox name (https://github.com/containers/toolbox) ]###############
+  # Toolbox color.
+  typeset -g POWERLEVEL9K_TOOLBOX_FOREGROUND=0
+  typeset -g POWERLEVEL9K_TOOLBOX_BACKGROUND=3
+  # Don't display the name of the toolbox if it matches fedora-toolbox-*.
+  typeset -g POWERLEVEL9K_TOOLBOX_CONTENT_EXPANSION='${P9K_TOOLBOX_NAME:#fedora-toolbox-*}'
+  # Custom icon.
+  # typeset -g POWERLEVEL9K_TOOLBOX_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  # Custom prefix.
+  typeset -g POWERLEVEL9K_TOOLBOX_PREFIX='in '
 
   ###############################[ public_ip: public IP address ]###############################
   # Public IP color.
