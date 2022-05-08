@@ -1,182 +1,181 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "console_title": true,
-    "console_title_style": "template",
-    "console_title_template": "{{.User}} in {{ .Folder }}",
-    "blocks": [{
-            "type": "rprompt",
-            "alignment": "right",
-            "segments": [{
-                    "type": "path",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": "\uE0B6",
-                    "foreground": "#FFCE47",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE5FF ",
-                        "postfix": "",
-                        "style": "folder"
-                    }
-                },
-                {
-                    "type": "time",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#3EC669",
-                    "background": "#424242",
-                    "properties": {
-                        "always_enabled": true,
-                        "prefix": "<#3EC669> \uf64f </>",
-                        "postfix": ""
-                    }
-                },
-                {
-                    "type": "executiontime",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#3EC669",
-                    "background": "#424242",
-                    "properties": {
-                        "always_enabled": true,
-                        "prefix": "",
-                        "postfix": ""
-                    }
-                },
-                {
-                    "type": "git",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#43CCEA",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "",
-                        "postfix": "",
-                        "display_status_detail": false,
-                        "branch_icon": ""
-                    }
-                },
-                {
-                    "type": "python",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#E4F34A",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE235",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "go",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#7FD5EA",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uFCD1",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "node",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#42E66C",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE718",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "ruby",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#E64747",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE791",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "java",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#E64747",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE738",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "julia",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#9B6BDF",
-                    "background": "#424242",
-                    "properties": {
-                        "prefix": "\uE624",
-                        "postfix": "",
-                        "display_version": false
-                    }
-                },
-                {
-                    "type": "battery",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "leading_diamond": " \uE0B6",
-                    "foreground": "#9B6BDF",
-                    "background": "#424242",
-                    "properties": {
-                        "battery_icon": "",
-                        "discharging_icon": "\u21E3 ",
-                        "charging_icon": "\u21E1 ",
-                        "charged_icon": "\u25CF ",
-                        "color_background": false,
-                        "charged_color": "#4caf50",
-                        "charging_color": "#40c4ff",
-                        "discharging_color": "#ff5722",
-                        "prefix": "",
-                        "postfix": "",
-                        "display_charging": true
-                    }
-                }
-            ]
+  "blocks": [{
+      "alignment": "right",
+      "segments": [{
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#FFCE47",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "\ue5ff {{ .Path }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "path"
         },
         {
-            "type": "prompt",
-            "alignment": "left",
-            "newline": true,
-            "segments": [{
-                "type": "session",
-                "style": "diamond",
-                "trailing_diamond": "\uE0B4 ",
-                "leading_diamond": "\uE0B6",
-                "foreground": "#d44141",
-                "background": "#424242",
-                "properties": {
-                    "display_host": false,
-                    "postfix": " \u276F",
-                    "prefix": ""
-                }
-            }]
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#3EC669",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "<#3EC669> \uf64f </>{{ .CurrentDate | date .Format }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#3EC669",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "{{ .FormattedMs }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "executiontime"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#43CCEA",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "diamond",
+          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "git"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#E4F34A",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue235{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "python"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#7FD5EA",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ufcd1{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "go"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#42E66C",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue718{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "node"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#E64747",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue791{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "ruby"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#E64747",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue738{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "java"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#9B6BDF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue624{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "julia"
+        },
+        {
+          "Enabled": false,
+          "background": "#424242",
+          "foreground": "#9B6BDF",
+          "foreground_templates": [
+            "{{ if eq \"Full\" .State.String }}#4caf50{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}#40c4ff{{ end }}",
+            "{{ if eq \"Discharging\" .State.String }}#ff5722{{ end }}"
+          ],
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "charged_icon": "\u25cf ",
+            "charging_icon": "\u21e1 ",
+            "discharging_icon": "\u21e3 "
+          },
+          "style": "diamond",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "battery"
         }
-    ]
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [{
+        "Enabled": false,
+        "background": "#424242",
+        "foreground": "#d44141",
+        "leading_diamond": "\ue0b6",
+        "properties": {
+          "display_host": false
+        },
+        "style": "diamond",
+        "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }} \u276f",
+        "trailing_diamond": "\ue0b4 ",
+        "type": "session"
+      }],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{.User}} in {{ .Folder }}",
+  "transient_prompt": {
+    "Enabled": false
+  },
+  "version": 2
 }
