@@ -15,6 +15,17 @@ Import-Module -Name Terminal-Icons
 
 oh-my-posh --init --shell pwsh --config /home/akrista/Documentos/GitHub/personal_config/oh-my-posh/ohmyposh.json | Invoke-Expression
 
+# For zoxide v0.8.0+
+Invoke-Expression (& {
+        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell | Out-String)
+    })
+
+# For older versions of zoxide
+Invoke-Expression (& {
+        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell) -join "`n"
+    })
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
