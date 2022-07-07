@@ -23,6 +23,7 @@ if has("nvim")
   Plug 'hrsh7th/nvim-cmp'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'onsails/lspkind-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
