@@ -118,7 +118,7 @@ local config = {
       ensure_installed = { "lua", "javascript", "css","dockerfile","dot","html","http","json","php","scss","sql","svelte","typescript","vim","yaml"},
     },
     ["nvim-lsp-installer"] = {
-      ensure_installed = { "sumneko_lua", "dockerls", "dotls", "html", "tsserver", "marksman" , "intelephense", "pyright", "sqls", "svelte","lemminx", "yamlls" },
+      ensure_installed = { "sumneko_lua", "dockerls", "dotls", "html", "tsserver", "marksman" , "intelephense", "pyright", "sqls", "svelte","lemminx", "yamlls","powershell_es"},
     },
     packer = {
       -- compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
