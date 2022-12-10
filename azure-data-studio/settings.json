@@ -1,0 +1,171 @@
+{
+  "workbench.editorAssociations": {
+    "*.{sqlplan}": "workbench.editor.executionplan",
+    "*.md": "default"
+  },
+  "workbench.enablePreviewFeatures": true,
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "cSpell.language": "en,es-ES",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrideDefaultValue",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.autofetch": true,
+  "git.inputValidationLength": 100,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "php.executablePath": "C:\\tools\\php80\\php.exe",
+  "cSpell.language": "es,es-ES",
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.forceDownload": false,
+  "sync.forceUpload": false,
+  "sync.quietSync": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "sync.gist": "f199f2d1215ce6124f39a8ca5da3e3f7",
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.linux": {
+    "Oh My Zsh": {
+      "path": "/bin/zsh"
+    }
+  },
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.fontFamily": "Fira Code, MesloLGS NF, Monoid, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.fontWeight": "normal",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.sortImports": false
+  },
+  "editor.linkedEditing": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "./css/"
+    }
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "redhat.telemetry.enabled": true,
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": ["busqueda", "Contáctame"],
+  "workbench.colorTheme": "Monokai Classic",
+  "GitLive.Issue tracker integration": "Enabled",
+  "ponicode.token": "32edbe9d-8b4e-4dd9-adf4-ee224ce4876a",
+  "webview.experimental.useExternalEndpoint": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "window.menuBarVisibility": "toggle",
+  "vscode-edge-devtools.mirrorEdits": true,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "workbench.iconTheme": "Monokai Classic Icons",
+  "material-icon-theme.activeIconPack": "react_redux",
+  "svelte.enable-ts-plugin": true,
+  "git.confirmSync": false,
+  "editor.mouseWheelZoom": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "powershell.powerShellAdditionalExePaths": {
+    "Powershell Core 7": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+  },
+  "powershell.powerShellDefaultVersion": "Powershell Core 7",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "gitlens.defaultDateFormat": null,
+  "gitlens.defaultDateShortFormat": "Do MMMM, YYYY h:mma",
+  "files.associations": {
+    "*.rmd": "markdown"
+  },
+  "editor.stickyScroll.enabled": true,
+  "notebook.lineNumbers": "on",
+  "backgroundCover.imagePath": "https://i.imgur.com/BHd4OUd.gif",
+  "backgroundCover.opacity": 0.1,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "mssql.enableQueryHistoryCapture": false,
+  "vscodeGoogleTranslate.preferredLanguage": "Spanish",
+  "cSpell.enableFiletypes": ["blade"],
+  "datasource.connectionGroups": [
+    {
+      "name": "Home",
+      "id": "60cb0321-e3c9-46a5-8119-d3beec2c865d",
+      "parentId": "C777F06B-202E-4480-B475-FA416154D458",
+      "color": "#85AE72",
+      "description": "Home Server"
+    },
+    {
+      "name": "ROOT",
+      "id": "C777F06B-202E-4480-B475-FA416154D458",
+      "color": "#85AE72",
+      "description": "Home Server"
+    }
+  ],
+  "editor.minimap.enabled": true
+}

@@ -1,0 +1,1 @@
+mount.exe -o lang=Ansi -o fileaccess=777 -o anon \\you\shared\directory\games X:
