@@ -8,7 +8,6 @@ On Powershell, install this modules with the following command:
 Install-Module oh-my-posh -Scope CurrentUser
 Install-Module PSReadLine -AllowPrerelease -Force
 Install-Module -Name Terminal-Icons -Repository PSGallery
-
 ```
 
 To install zoxide, run this command in your command prompt:
