@@ -1,0 +1,77 @@
+live_config_reload: true
+
+scrolling:
+    history: 10000
+    multiplier: 10
+
+selection:
+    semantic_escape_chars: '|:"'' {}()[]<>'
+    save_to_clipboard: true
+
+window:
+  opacity: 1.0
+  padding:
+    x: 10
+    y: 5
+  decorations: none
+
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+  size: 14.0
+
+draw_bold_text_with_bright_colors: true
+
+# Colors (Monokai Pro)
+colors:
+  # Default colors
+  primary:
+    background: '#2D2A2E'
+    foreground: '#FCFCFA'
+
+  # Normal colors
+  normal:
+    black:   '#403E41'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
+
+  # Bright colors
+  bright:
+    black:   '#727072'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+key_bindings:
+  - { key: N, mods: Control, action: SpawnNewInstance}
+  - { key: Q, mods: Control, action: Quit} 
+  - { key: W, mods: Control, action: Quit}
+  - { key: F, mods: Control, action: ToggleFullscreen}
+
+shell:
+  program: powershell
+  args:
+    - pwsh -NoLogo

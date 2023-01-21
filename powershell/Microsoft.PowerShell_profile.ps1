@@ -1,6 +1,9 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
  
+Set-Alias vim "$env:USERPROFILE\.local\bin\lvim.ps1"
+Set-Alias lvim "$env:USERPROFILE\.local\bin\lvim.ps1"
+
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine
@@ -13,7 +16,7 @@ Import-Module -Name Terminal-Icons
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
-oh-my-posh --init --shell pwsh --config /home/akrista/Documentos/GitHub/personal_config/oh-my-posh/ohmyposh.json | Invoke-Expression
+#oh-my-posh --init --shell pwsh --config C:\\Users\\jatlc\\Documents\\GitHub\\dotfiles\\oh-my-posh\\ohmyposh.json | Invoke-Expression
 
 # For zoxide v0.8.0+
 Invoke-Expression (& {
@@ -705,3 +708,15 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet test")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+
+Invoke-Expression (&starship init powershell)
