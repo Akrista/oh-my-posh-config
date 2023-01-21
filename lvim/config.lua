@@ -3,8 +3,10 @@
  `lvim` is the global options object
 ]]
 
--- Enable powershell as your default shell
-vim.cmd [[
+if vim.loop.os_uname().sysname == "Windows" then
+
+  -- Enable powershell as your default shell
+  vim.cmd [[
     let &shell = has('unix') ? 'zsh' : 'pwsh'
     let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
 		let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
@@ -12,17 +14,19 @@ vim.cmd [[
 		set shellquote= shellxquote=
   ]]
 
--- Set a compatible clipboard manager
-vim.g.clipboard = {
-  copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf",
-  },
-  paste = {
-    ["+"] = "win32yank.exe -o --lf",
-    ["*"] = "win32yank.exe -o --lf",
-  },
-}
+  -- Set a compatible clipboard manager
+  vim.g.clipboard = {
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+  }
+
+end
 
 -- vim options
 vim.opt.shiftwidth = 2
