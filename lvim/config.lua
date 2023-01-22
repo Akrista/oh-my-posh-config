@@ -31,7 +31,17 @@ end
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
+vim.opt.smartindent = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.updatetime = 50
 
 -- general
 lvim.log.level = "info"
@@ -130,9 +140,9 @@ lvim.plugins = {
   {
     'github/copilot.vim'
   },
-  {
-    'wfxr/minimap.vim', build = "cargo install --locked code-minimap"
-  },
+  -- {
+  --   'wfxr/minimap.vim', build = "cargo install --locked code-minimap"
+  -- },
   -- {
   --   'xiyaowong/nvim-transparent', config = function()
   --     require('nvim-transparent').setup({
@@ -143,11 +153,11 @@ lvim.plugins = {
   -- },
 }
 
-vim.cmd [[
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
-]]
+-- vim.cmd [[
+-- let g:minimap_width = 10
+-- let g:minimap_auto_start = 1
+-- let g:minimap_auto_start_win_enter = 1
+-- ]]
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
