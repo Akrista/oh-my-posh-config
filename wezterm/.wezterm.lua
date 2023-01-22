@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 local config = {}
-
+local bgimghue = math.random() + math.random(1, 2)
 
 if string.match(wezterm.target_triple, "windows") then
   config.default_prog = { 'powershell', 'pwsh -NoLogo' }
@@ -10,6 +10,7 @@ config.color_scheme = "MonokaiProRistretto (Gogh)"
 config.window_decorations = "RESIZE"
 config.font = wezterm.font "MesloLGS NF"
 config.enable_tab_bar = false
+config.default_cursor_style = "BlinkingBlock"
 -- config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 -- config.window_frame = {
@@ -47,7 +48,7 @@ local background = {
     },
     hsb = {
       brightness = 0.05,
-      hue = 2,
+      hue = bgimghue,
       saturation = 1,
     },
     opacity = 0.9,
