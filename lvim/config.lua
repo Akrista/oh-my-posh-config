@@ -3,7 +3,9 @@
  `lvim` is the global options object
 ]]
 
-if vim.loop.os_uname().sysname == "Windows" then
+local sysop = string.find(string.lower(vim.loop.os_uname().sysname), "windows")
+
+if sysop then
 
   -- Enable powershell as your default shell
   vim.cmd [[
@@ -140,9 +142,9 @@ lvim.plugins = {
   {
     'github/copilot.vim'
   },
-  -- {
-  --   'wfxr/minimap.vim', build = "cargo install --locked code-minimap"
-  -- },
+  {
+    'wfxr/minimap.vim', build = "cargo install --locked code-minimap"
+  },
   -- {
   --   'xiyaowong/nvim-transparent', config = function()
   --     require('nvim-transparent').setup({
@@ -153,12 +155,15 @@ lvim.plugins = {
   -- },
 }
 
--- vim.cmd [[
--- let g:minimap_width = 10
--- let g:minimap_auto_start = 1
--- let g:minimap_auto_start_win_enter = 1
--- ]]
+if not sysop then
 
+  vim.cmd [[
+    let g:minimap_width = 10
+    let g:minimap_auto_start = 1
+    let g:minimap_auto_start_win_enter = 1
+  ]]
+
+end
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
