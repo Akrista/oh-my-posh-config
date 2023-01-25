@@ -166,6 +166,3 @@ eval "$(zoxide init zsh)"
 export PATH="$PATH:/opt/mssql-tools18/bin"
 . "$HOME/.cargo/env"
 export PATH="~/.local/bin:$PATH"
-
-alias nvim="~/.local/bin/lvim"
-alias vim="~/.local/bin/lvim"

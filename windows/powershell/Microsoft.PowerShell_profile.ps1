@@ -1,9 +1,6 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
  
-Set-Alias vim "$env:USERPROFILE\.local\bin\lvim.ps1"
-Set-Alias lvim "$env:USERPROFILE\.local\bin\lvim.ps1"
-
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine
