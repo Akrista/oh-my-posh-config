@@ -100,7 +100,7 @@ ZSH_DISABLE_COMPFIX="true"
 plugins=(
   docker
   docker-compose
-  tmux
+  #tmux
   rsync
   bgnotify
   ufw
