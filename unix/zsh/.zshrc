@@ -174,3 +174,5 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:/opt/mssql-tools18/bin"
 . "$HOME/.cargo/env"
 export PATH="~/.local/bin:$PATH"
+export PATH="/home/akrista/.local/bin:$PATH"
+export GO111MODULE=on

@@ -1,0 +1,1 @@
+//host/folder /home/akrista/folder cifs rw,user=user,password=password,uid=1000,dir_mode=0777,file_mode=0777,noauto,x-systemd.automount,_netdev 0 0
