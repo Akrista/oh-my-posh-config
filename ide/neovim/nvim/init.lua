@@ -3,8 +3,11 @@
 ========================== NOTAS DE AYUDA ===========================
 =====================================================================
 
+- Leader Key: es la tecla que se usa para ejecutar comandos en Neovim, por defecto es la tecla <space>
+  - :help mapleader: para ver la ayuda de la tecla <leader>
+
 - Telescope:
-  - :Telescope hepl_tags: es un comando que te permite buscar la definición de variables o funciones relacionadas a neovim
+  - :Telescope help_tags: es un comando que te permite buscar la definición de variables o funciones relacionadas a neovim
   o a un plugin en especifico.
 
 - Mason:
@@ -12,47 +15,23 @@
   en Neovim.
 
 - Github Copilot:
+  - :Copilot setup
 
 - Wakatime:
+  - :WakaTimeApiKey: este comando te permite configurar la key del API para Wakatime
 
-- Gruvbox:
+- Gruvbox: mi colorscheme preferido
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, and understand
-  what your configuration is doing.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
 
   If you don't know anything about Lua, I recommend taking some time to read through
   a guide. One possible example:
   - https://learnxinyminutes.com/docs/lua/
 
   And then you can explore or search through `:help lua-guide`
-
-
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
-In addition, I have some `NOTE:` items throughout the file.
-These are for you, the reader to help understand what is happening. Feel free to delete
-them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now :)
 --]]
--- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 -- ! Set <space> as the leader key
 vim.g.mapleader = ' '
@@ -61,7 +40,6 @@ vim.g.maplocalleader = ' '
 --    Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
---    Instalación del gestor de paquetes, se usa lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -126,13 +104,9 @@ require('lazy').setup(
     },
 
     -- Copilot
-    -- Es un asistente de codigo AI
-    -- Hay que revisar su compatibilidad con los LSP
     { 'github/copilot.vim' },
 
     -- Wakatime
-    -- Wakatime permite medir el tiempo que paso trabajando en un proyecto, lenguaje de programación
-    -- de esta forma puedo medir mis avances y en que gasto mi tiempo a diario.
     { 'wakatime/vim-wakatime' },
 
     -- Useful plugin to show you pending keybinds.
@@ -222,6 +196,7 @@ require('lazy').setup(
     --       Uncomment any of the lines below to enable them.
     require 'kickstart.plugins.autoformat',
     require 'kickstart.plugins.debug',
+    -- require 'kickstart.keymaps',
 
     -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
     --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -455,9 +430,9 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
   -- tsserver = {},
 
+  rust_analyzer = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
