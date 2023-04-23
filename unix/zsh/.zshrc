@@ -175,4 +175,12 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 . "$HOME/.cargo/env"
 export PATH="~/.local/bin:$PATH"
 export PATH="/home/akrista/.local/bin:$PATH"
-export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin
+
+# pnpm
+export PNPM_HOME="/home/akrista/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
