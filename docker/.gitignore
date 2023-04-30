@@ -1,0 +1,5 @@
+data/
+config/
+etc-dnsmasq.d/
+etc-pihole/
+.env

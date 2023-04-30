@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  bytebase:
+    image: bytebase/bytebase:release-ci
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:80/healthz", "||", "exit", "1"]
+      interval: 5m
+      timeout: 60s
+    volumes:
+      - ./data:/var/opt/bytebase
+    ports:
+      - ${BB_PORTS}
+    command: --data /var/opt/bytebase --pg ${BB_PG} --external-url ${BB_EXTERNAL_URL} --port 8080

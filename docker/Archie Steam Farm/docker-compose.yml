@@ -1,0 +1,15 @@
+---
+version: "3"
+services:
+  asf:
+    image: justarchi/archisteamfarm:latest
+    container_name: asf
+    environment:
+      - TZ=America/Caracas
+    volumes:
+      - ./config:/app/config
+    ports:
+      - 1242:1242
+    restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"

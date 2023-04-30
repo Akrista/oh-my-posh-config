@@ -1,0 +1,18 @@
+version: "3"
+services:
+  db:
+    container_name: mysql
+    image: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${APP_DB_ROOT_PASS}
+      MYSQL_USER: ${APP_DB_USER}
+      MYSQL_PASSWORD: ${APP_DB_USER_PASS}
+      TZ: ${APP_TZ}
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - ${APP_PORT}
+    volumes:
+      - ./data:/var/lib/mysql
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"

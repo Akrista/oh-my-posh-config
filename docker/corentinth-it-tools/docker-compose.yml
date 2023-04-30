@@ -1,0 +1,7 @@
+version: "3"
+services:
+  web:
+    image: corentinth/it-tools
+    ports:
+      - "8280:80"
+    restart: unless-stopped

@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${APP_DB_USER}
+      POSTGRES_PASSWORD: ${APP_DB_PASSWORD}
+      POSTGRES_DB: ${APP_DB_NAME}
+      TZ: ${APP_TZ}
+    ports:
+      - ${APP_DB_PORTS}
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  # pgadmin:
+  #   container_name: pgadmin4_container
+  #   image: dpage/pgadmin4
+  #   restart: unless-stopped
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: root
+  #   ports:
+  #     - "5050:80"

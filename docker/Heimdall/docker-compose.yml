@@ -1,0 +1,18 @@
+version: "2"
+services:
+  heimdall:
+    image: ghcr.io/linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Caracas
+    volumes:
+      - ./config:/config
+      # - ./public:/var/www/localhost/heimdall/public
+    ports:
+      #- 80:80
+      - 443:443
+    restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"

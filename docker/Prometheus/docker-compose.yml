@@ -1,0 +1,28 @@
+---
+version: "2"
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Caracas
+      - UMASK_SET=022
+    volumes:
+      - ./data/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9292:9090
+    restart: unless-stopped
+
+  prometheus_pushgateway:
+    image: prom/pushgateway
+    container_name: prometheus_pushgateway
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Caracas
+      - UMASK_SET=022
+    ports:
+      - 9091:9091
+    restart: unless-stopped

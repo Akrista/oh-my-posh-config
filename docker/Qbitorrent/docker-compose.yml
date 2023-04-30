@@ -1,0 +1,20 @@
+version: "3"
+services:
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Caracas
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config:/config
+      - ${QBIT_OUTPUT}
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+    restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
