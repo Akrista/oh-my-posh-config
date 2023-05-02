@@ -137,6 +137,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias jo=joshuto
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -176,6 +177,9 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 export PATH="~/.local/bin:$PATH"
 export PATH="/home/akrista/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export DENO_INSTALL="/home/akrista/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 
 # pnpm
 export PNPM_HOME="/home/akrista/.local/share/pnpm"
