@@ -431,7 +431,10 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- tsserver = {},
-
+  intelephense = {},
+  lemminx = {},
+  zls = {},
+  sqlls = {},
   rust_analyzer = {},
   lua_ls = {
     Lua = {
