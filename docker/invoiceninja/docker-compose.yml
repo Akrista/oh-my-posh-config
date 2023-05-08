@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  invoiceninja:
+    image: invoiceninja/invoiceninja
+    ports:
+      - "7985:80"
+    volumes:
+      - ./public:/var/app/public
+      - ./storage:/var/app/storage
+    environment:
+      APP_ENV: 'production'
+      APP_DEBUG: '0'
+      APP_URL: 'http://192.168.1.4:7985'
+      APP_KEY: 'base64:S9OXmKXTOUgmUuckVwkb5y7ux//j04d1W1g4nJ2Ipc8='
+      APP_CIPHER: 'AES-256-CBC'
+      DB_TYPE: 'mysql'
+      DB_STRICT: 'false'
+      DB_HOST: '192.168.1.4'
+      DB_PORT: '3307'
+      DB_DATABASE: 'ninja'
+      DB_USERNAME: 'akrista'
+      DB_PASSWORD: 'Akrista69++'
