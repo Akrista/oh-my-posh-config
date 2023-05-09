@@ -1,0 +1,15 @@
+version: '3'
+services:
+  pialert:
+    image: jokobsk/pi.alert:latest
+    network_mode: host
+    volumes:
+      - ./data/config:/home/pi/pialert/config
+      - ./data/db:/home/pi/pialert/db
+      - ./data/logs:/home/pi/pialert/front/log
+    restart: unless-stopped
+    environment:
+      TZ: 'America/Caracas'
+      PORT: '20211'
+      HOST_USER_GID: 1000
+      HOST_USER_ID: 1000
