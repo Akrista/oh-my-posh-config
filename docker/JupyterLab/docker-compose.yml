@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jupyter:
+    image: jupyter/scipy-notebook
+    ports:
+      - 8889:8888
+    environment:
+      - GRANT_SUDO=yes
+    volumes:
+      - ./data:/home/jovyan
+    user: root

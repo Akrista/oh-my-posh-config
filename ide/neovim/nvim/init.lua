@@ -103,6 +103,9 @@ require('lazy').setup(
       dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
     },
 
+    -- Jukit for Jupyter Notebooks
+    { 'luk400/vim-jukit' },
+
     -- Copilot
     { 'github/copilot.vim' },
 
