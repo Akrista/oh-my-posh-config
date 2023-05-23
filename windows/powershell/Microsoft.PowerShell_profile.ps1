@@ -5,11 +5,17 @@ if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine
 }
+
+function miniforge {
+    cmd "/K" C:\ProgramData\mambaforge\Scripts\activate.bat
+}
+
 #Import-Module PSColors
 #Import-Module posh-git
 Import-Module -Name Terminal-Icons
 # ! Don't use Import-Module oh-my-posh anymore
 #set-alias desktop "Desktop.ps1"
+Set-Alias -Name "mamba" -Value "miniforge"
 #Set-Theme ParadoxGlucose
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
