@@ -104,7 +104,7 @@ require('lazy').setup(
     },
 
     -- Jukit for Jupyter Notebooks
-    { 'luk400/vim-jukit' },
+    -- { 'luk400/vim-jukit' },
 
     -- Copilot
     { 'github/copilot.vim' },
