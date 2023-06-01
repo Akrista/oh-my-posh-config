@@ -2,4 +2,7 @@ data/
 config/
 etc-dnsmasq.d/
 etc-pihole/
+logs/
+db/
+dbbackup/
 .env
