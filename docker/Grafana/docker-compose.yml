@@ -1,5 +1,24 @@
 version: '3'
 services:
+  loki:
+    image: grafana/loki
+    volumes:
+      - ./loki:/etc/loki
+    ports:
+      - "3100:3100"
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+    # networks:
+    #   - grafana
+  promtail:
+    image: grafana/promtail
+    volumes:
+      - /var/log:/var/log
+      - ./promtail:/etc/promtail
+    restart: unless-stopped
+    command: -config.expand-env -config.file=/etc/promtail/promtail-config.yml
+    # networks:
+    #   - grafana
   grafana:
     image: grafana/grafana-oss
     # image: grafana/grafana-oss
@@ -29,13 +48,13 @@ services:
       # - GF_USERS_VIEWERS_CAN_EDIT=true
       # - GF_USERS_EDITORS_CAN_ADMIN=true
       # [Database]
-      - GF_DATABASE_TYPE=postgres
-      - GF_DATABASE_HOST=hostname:port
-      - GF_DATABASE_NAME=grafana
-      - GF_DATABASE_USER=user
-      - GF_DATABASE_PASSWORD=password
-      - GF_DATABASE_SSL_MODE=disable
-      # - GF_DATABASE_LOQ_QUERIES=trueorfalse
+      - GF_DATABASE_TYPE=${GF_DATABASE_TYPE}
+      - GF_DATABASE_HOST=${GF_DATABASE_HOST}
+      - GF_DATABASE_NAME=${GF_DATABASE_NAME}
+      - GF_DATABASE_USER=${GF_DATABASE_USER}
+      - GF_DATABASE_PASSWORD=${GF_DATABASE_PASSWORD}
+      - GF_DATABASE_SSL_MODE=${GF_DATABASE_SSL_MODE}
+      - GF_DATABASE_LOQ_QUERIES=${GF_DATABASE_LOQ_QUERIES}
       # [Analytics]
       - GF_ANALYTICS_REPORTING_ENABLED=false
       - GF_ANALYTICS_CHECK_FOR_UPDATES=true
@@ -60,7 +79,9 @@ services:
     ports:
       - 3000:3000
     # [Volumes] You need to set the user, check documentation, i prefer not to use volumes
-    # user: "root"
-    # volumes:
-    #   - ./var-grafana:/var/lib/grafana
+    user: "1000"
+    volumes:
+      - ./grafana:/var/lib/grafana
     restart: unless-stopped
+    # networks:
+    #   - grafana
