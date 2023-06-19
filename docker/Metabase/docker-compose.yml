@@ -21,6 +21,7 @@ services:
     volumes:
       - ./data:/metabase-data
       - ./config:/metabase
+      # - ./plugins:/plugins
     healthcheck:
       test: curl --fail -I http://localhost:3000/api/health || exit 1
       interval: 15s
