@@ -2,7 +2,7 @@ version: '3'
 
 services:
   bytebase:
-    image: bytebase/bytebase:release-ci
+    image: bytebase/bytebase:2.3.0
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:80/healthz", "||", "exit", "1"]
