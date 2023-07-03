@@ -12,3 +12,5 @@ services:
       # - NEXT_PUBLIC_DATABASE_LESS=${NEXT_PUBLIC_DATABASE_LESS}
     ports:
       - 5679:3000
+    restart:
+      unless-stopped
