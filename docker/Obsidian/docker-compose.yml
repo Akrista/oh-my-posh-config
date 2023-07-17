@@ -1,16 +1,20 @@
-version: "3.8"
+version: "3.9"
 services:
   obsidian:
-    image: "ghcr.io/sytone/obsidian-remote:latest"
+    image: ghcr.io/sytone/obsidian-remote:latest
     container_name: obsidian-remote
     restart: unless-stopped
     ports:
-      - 8080:8080
+      - 8040:8080
     volumes:
-      - /home/akrista/obsidianvaults:/vaults
-      - /home/akrista/obsidianconfig:/config
+      - ./vault:/vaults
+      - ./config:/config
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Caracas
-      - DOCKER_MODS=linuxserver/mods:universal-git
+      # - CUSTOM_USER=${USER}
+      # - PASSWORD=${PASS}
+      - TITLE=Obsidian
+      - KEYBOARD=es-es-qwerty
+      # - DOCKER_MODS=linuxserver/mods:universal-git
