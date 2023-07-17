@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mssqlserver:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    ports:
+      - "1434:1433"
+    environment:
+      - ACCEPT_EULA=Y # Importante dejar la opción en "Y" para aceptar los términos y condiciones de Microsoft
+      - MSSQL_SA_PASSWORD=${PASS} # Contraseña para el usuario "sa"
+      - TZ=America/Caracas # Indica la zona Horario que corresponda según tu ubicación/configuración
+      - MSSQL_PID=Developer # Aquí puedes colocar la llave de tu producto MSSQL o en su defecto la version que desees usar
+    hostname: azsqledge
+    user: root
+    volumes:
+      - ./data:/var/opt/mssql # Esto escribirá toda la data de los volúmenes dentro de la carpeta en la que se encuentre este archivo docker-compose.yml, bajo el directorio "MSSQL"
+    restart: unless-stopped
