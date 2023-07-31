@@ -1,4 +1,8 @@
 version: "2.1"
+networks:
+  default:
+    name: frontend
+    external: true
 services:
   ubooquity:
     image: ghcr.io/linuxserver/ubooquity

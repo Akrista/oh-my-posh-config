@@ -1,5 +1,8 @@
 version: '3'
-
+networks:
+  default:
+    name: backend
+    external: true
 services:
   portainer:
     image: portainer/portainer-ce:latest
@@ -14,6 +17,7 @@ services:
       - ./data:/data
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+
 #       - "traefik.enable=true"
 #       - "traefik.http.routers.portainer.rule=Host(`your.ip.for.traefik`)"
 #       - "traefik.http.routers.portainer.entrypoints=portainer"

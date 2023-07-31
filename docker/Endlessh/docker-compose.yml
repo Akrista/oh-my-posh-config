@@ -1,5 +1,8 @@
----
 version: "2.1"
+networks:
+  default:
+    name: backend
+    external: true
 services:
   endlessh:
     image: lscr.io/linuxserver/endlessh:latest

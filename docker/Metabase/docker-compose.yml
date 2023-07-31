@@ -1,4 +1,8 @@
 version: "3"
+networks:
+  default:
+    name: frontend
+    external: true
 services:
   metabase:
     image: metabase/metabase:latest

@@ -1,18 +1,22 @@
 version: '3'
+networks:
+  default:
+    name: backend
+    external: true
 services:
   weblate:
     image: weblate/weblate
     volumes:
-    - ./weblate-data:/app/data
-    - ./weblate-cache:/app/cache
+      - ./weblate-data:/app/data
+      - ./weblate-cache:/app/cache
     env_file:
-    - ./.env
+      - ./.env
     ports:
-    - 8070:8080
+      - 8070:8080
     restart: unless-stopped
     depends_on:
-    # - database
-    - cache
+      # - database
+      - cache
   # database:
   #   image: postgres:15-alpine
   #   env_file:
@@ -23,6 +27,6 @@ services:
   cache:
     image: redis:7-alpine
     restart: unless-stopped
-    command: [redis-server, --save, '60', '1']
+    command: [ redis-server, --save, '60', '1' ]
     volumes:
-    - ./redis-data:/data
+      - ./redis-data:/data

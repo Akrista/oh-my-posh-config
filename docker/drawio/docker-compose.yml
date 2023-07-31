@@ -1,4 +1,8 @@
 version: '3'
+networks:
+  default:
+    name: frontend
+    external: true
 services:
   draw:
     image: jgraph/drawio
@@ -6,4 +10,3 @@ services:
       - 8387:8080
       # - 8443:8443
     restart: 'unless-stopped'
-

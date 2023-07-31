@@ -1,5 +1,9 @@
 ---
 version: "2"
+networks:
+  default:
+    name: backend
+    external: true
 services:
   sonarr:
     image: linuxserver/sonarr

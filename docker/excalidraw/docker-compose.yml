@@ -1,9 +1,13 @@
 version: "3.9"
+networks:
+  default:
+    name: frontend
+    external: true
 services:
   excalidraw:
-    container_name: Excalidraw
+    container_name: excalidraw
     healthcheck:
-     test: curl -f http://localhost:80/ || exit 1
+      test: curl -f http://localhost:80/ || exit 1
     image: excalidraw/excalidraw:latest
     ports:
       - 5000:80

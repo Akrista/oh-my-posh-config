@@ -1,4 +1,8 @@
 version: '3'
+networks:
+  default:
+    name: backend
+    external: true
 services:
   sqlchat:
     image: sqlchat/sqlchat
@@ -12,5 +16,4 @@ services:
       # - NEXT_PUBLIC_DATABASE_LESS=${NEXT_PUBLIC_DATABASE_LESS}
     ports:
       - 5679:3000
-    restart:
-      unless-stopped
+    restart: unless-stopped

@@ -1,4 +1,8 @@
 version: '3'
+networks:
+  default:
+    name: frontend
+    external: true
 services:
   actual_server:
     image: actualbudget/actual-server:edge-alpine
