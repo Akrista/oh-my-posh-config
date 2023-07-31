@@ -1,4 +1,8 @@
 version: "3"
+networks:
+  default:
+    name: backends
+    external: true
 services:
   mssqlserver:
     image: mcr.microsoft.com/azure-sql-edge:latest
