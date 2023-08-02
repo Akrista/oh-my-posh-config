@@ -135,6 +135,7 @@ require("lazy").setup(
         -- Para abrirlo solo debes ejecutar :Mason en la consola
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        -- null-ls will be archived on 11-08-2023, pending a suitable replacement
         {
           'jay-babu/mason-null-ls.nvim',
           event = { 'BufReadPre', 'BufNewFile' },
