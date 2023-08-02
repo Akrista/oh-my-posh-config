@@ -74,6 +74,34 @@ require("lazy").setup(
     -- Copilot
     { 'github/copilot.vim' },
 
+    -- Cloak
+    {
+      'laytan/cloak.nvim',
+      config = function()
+        require('cloak').setup({
+          enabled = true,
+          cloack_character = "*",
+          -- The applied highlight group (colors) on the cloaking, see `:h highlight`.
+          highlight_group = "Comment",
+          patterns = {
+            {
+              -- Match any file starting with ".env".
+              -- This can be a table to match multiple file patterns.
+              file_pattern = {
+                ".env*",
+                "wrangler.toml",
+                ".dev.vars",
+              },
+              -- Match an equals sign and any character after it.
+              -- This can also be a table of patterns to cloak,
+              -- example: cloak_pattern = { ":.+", "-.+" } for yaml files.
+              cloak_pattern = "=.+"
+            },
+          },
+        })
+      end
+    },
+
     -- Wakatime
     { 'wakatime/vim-wakatime' },
     {
@@ -559,28 +587,8 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif require('copilot').expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(copilot-next)', true, true, true), 'n')
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      elseif require('copilot').jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(copilot-previous)', true, true, true), 'n')
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
+    ['<Tab>'] = nil,
+    ['<S-Tab>'] = nil,
   },
   sources = {
     { name = 'nvim_lsp' },
