@@ -153,7 +153,9 @@ require("lazy").setup(
                 "prettierd",
                 "eslint_d",
                 "js-debug-adapter",
-                "cpptools"
+                "cpptools",
+                "djlint",
+                "delve"
               }
             })
           end
@@ -527,6 +529,7 @@ local servers = {
   jsonls = {},
   marksman = {},
   powershell_es = {},
+  gopls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
