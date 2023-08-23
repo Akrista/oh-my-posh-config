@@ -155,7 +155,9 @@ require("lazy").setup(
                 "js-debug-adapter",
                 "cpptools",
                 "djlint",
-                "delve"
+                "delve",
+                "semgrep",
+                "pint"
               }
             })
           end
