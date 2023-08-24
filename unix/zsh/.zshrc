@@ -189,3 +189,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+autoload -U compinit
+compinit -i
