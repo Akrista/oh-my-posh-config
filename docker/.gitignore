@@ -6,3 +6,5 @@ logs/
 db/
 dbbackup/
 .env
+!supabase/volumes/logs/
+!supabase/volumes/db/

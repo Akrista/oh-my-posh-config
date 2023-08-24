@@ -1,4 +1,8 @@
 version: "3.7"
+networks:
+  default:
+    name: databases
+    external: true
 services:
   pocketbase:
     image: ghcr.io/muchobien/pocketbase:latest
@@ -14,7 +18,8 @@ services:
     volumes:
       - ./data:/pb_data
       - ./public:/pb_public #optional
-    healthcheck: #optional (recommended) since v0.10.0
+    healthcheck:
+      #optional (recommended) since v0.10.0
       test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
       interval: 5s
       timeout: 5s
