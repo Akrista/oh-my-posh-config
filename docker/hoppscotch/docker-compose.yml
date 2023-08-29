@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  default:
+    name: backend
+    external: true
+services:
+  portainer:
+    image: hoppscotch/hoppscotch:latest
+    container_name: hoppscotch
+    restart: unless-stopped
+    ports:
+      - 3009:3000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
