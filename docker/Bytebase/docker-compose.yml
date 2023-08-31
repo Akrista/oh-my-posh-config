@@ -5,7 +5,7 @@ networks:
     external: true
 services:
   bytebase:
-    image: bytebase/bytebase:release-ci
+    image: bytebase/bytebase:2.7.0
     restart: unless-stopped
     healthcheck:
       test:
