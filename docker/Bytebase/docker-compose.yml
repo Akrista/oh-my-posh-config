@@ -8,20 +8,9 @@ services:
     image: bytebase/bytebase:2.7.0
     restart: unless-stopped
     healthcheck:
-      test:
-        [
-          "CMD",
-          "curl",
-          "--fail",
-          "http://localhost:80/healthz",
-          "||",
-          "exit",
-          "1"
-        ]
-      interval: 5m
-      timeout: 60s
+      disable: true
     volumes:
       - ./data:/var/opt/bytebase
     ports:
       - ${BB_PORTS}
-    command: --data /var/opt/bytebase --pg ${BB_PG} --external-url ${BB_EXTERNAL_URL} --port 8080
+    command: --data /var/opt/bytebase --pg ${BB_PG} --external-url ${BB_EXTERNAL_URL} --port 8080 --disable-sample --disable-metric
