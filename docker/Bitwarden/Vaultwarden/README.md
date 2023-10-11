@@ -1,1 +1,0 @@
-docker run -d --name bitwarden --restart unless-stopped -v /bw-data:/data -v /etc/ssl/certs:/ssl -e SIGNUPS_ALLOWED=false -e SIGNUPS_DOMAINS_WHITELIST=domain.cp, -e ADMIN_TOKEN=token -e ROCKET_TLS='{certs="/ssl/bitwarden.crt",key="/ssl/bitwarden.key"}' -p 8082:80 bitwardenrs/server:latest
