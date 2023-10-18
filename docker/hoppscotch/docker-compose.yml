@@ -4,11 +4,15 @@ networks:
     name: backend
     external: true
 services:
-  portainer:
-    image: hoppscotch/hoppscotch:latest
+  hoppscotch:
     container_name: hoppscotch
+    image: hoppscotch/hoppscotch
     restart: unless-stopped
     ports:
-      - 3009:3000
+      - "3009:3000"
+      - "3111:3100"
+      - "3170:3170"
+    env_file:
+      - .env
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
