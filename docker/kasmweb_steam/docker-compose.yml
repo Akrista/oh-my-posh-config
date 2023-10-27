@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  steam:
+    image: kasmweb/steam:1.13.0
+    ports:
+      - "6901:6901"
+    environment:
+      - VNC_PW=${VNC_PW}
+    shm_size: 512m
+    restart: unless-stopped
