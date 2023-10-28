@@ -1,13 +1,18 @@
-version: "2.1"
+version: '3'
 services:
-  nfs:
-    image: itsthenetwork/nfs-server-alpine:12
-    container_name: nfs
-    restart: unless-stopped
+  nfs-server:
+    image: tangjiujun/nfs-server:v1.0
+    container_name: nfs-server
     privileged: true
-    environment:
-      - SHARED_DIRECTORY=/data
+    restart: unless-stopped
     volumes:
-      - ./data:/data
+      - ./data:/nfsshare
     ports:
+      - 111:111
+      - 111:111/udp
       - 2049:2049
+      - 2049:2049/udp
+      - 32765-32768:32765-32768
+      - 32765-32768:32765-32768/udp
+    environment:
+      - EXPORT_OPS=192.168.1.*(rw,async,no_subtree_check)
