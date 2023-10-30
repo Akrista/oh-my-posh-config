@@ -13,7 +13,7 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle heroku
-antigen bundle pip
+# antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 
@@ -202,5 +202,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias cat=bat
-alias python=python3
+# alias python=python3
 alias fd=fdfind

@@ -4,12 +4,12 @@ services:
   steamos:
     image: lscr.io/linuxserver/steamos:latest
     container_name: steamos
-    # hostname: hostname #optional
+    hostname: steamos #optional
     cap_add:
       - NET_ADMIN
     security_opt:
       - seccomp:unconfined
-      # - apparmor:unconfined #optional
+      - apparmor:unconfined #optional
     environment:
       - PUID=1000
       - PGID=1000
@@ -21,16 +21,16 @@ services:
       - RESOLUTION=1920x1080 #optional
     volumes:
       - ./config:/config
-      # - /dev/input:/dev/input #optional
-      # - /run/udev/data:/run/udev/data #optional
+      - /dev/input:/dev/input #optional
+      - /run/udev/data:/run/udev/data #optional
     ports:
       - 3030:3000
-      # - 3031:3001
-      # - 27031-27036:27031-27036/udp #optional
-      # - 27031-27036:27031-27036 #optional
-      # - 47984-47990:47984-47990 #optional
-      # - 48010-48010:48010-48010 #optional
-      # - 47998-48000:47998-48000/udp #optional
+      - 3031:3001
+      - 27031-27036:27031-27036/udp #optional
+      - 27031-27036:27031-27036 #optional
+      - 47984-47990:47984-47990 #optional
+      - 48010-48010:48010-48010 #optional
+      - 47998-48000:47998-48000/udp #optional
     devices:
       - /dev/dri:/dev/dri
     shm_size: "1gb"
