@@ -9,7 +9,7 @@ services:
       - NET_ADMIN
     security_opt:
       - seccomp:unconfined
-      # - apparmor:unconfined #optional - deactivates vnc audio
+      - apparmor:unconfined #optional
     environment:
       - PUID=1000
       - PGID=1000
