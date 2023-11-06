@@ -1,6 +1,9 @@
 version: "2.1"
+networks:
+  default:
+    name: backend
+    external: true
 services:
-
   steamos:
     image: lscr.io/linuxserver/steamos:latest
     container_name: steamos

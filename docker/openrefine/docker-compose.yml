@@ -1,7 +1,12 @@
 version: "3.8"
+networks:
+  default:
+    name: backend
+    external: true
 services:
   openrefine:
     image: easypi/openrefine
+    container_name: openrefine
     ports:
       - "3333:3333"
     volumes:
