@@ -1,4 +1,8 @@
 version: "3"
+networks:
+  default:
+    name: backend
+    external: true
 services:
   jdownloader-2:
     image: jlesage/jdownloader-2

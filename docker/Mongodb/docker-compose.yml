@@ -1,8 +1,10 @@
 # Use root/example as user/password credentials
 version: '3.1'
-
+networks:
+  default:
+    name: databases
+    external: true
 services:
-
   mongo:
     image: mongo
     restart: unless-stopped
@@ -10,10 +12,9 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
-     - ./data:/data/db
+      - ./data:/data/db
     ports:
-     - 27017:27017
-
+      - 27017:27017
   # mongo-express:
   #   image: mongo-express
   #   restart: unless-stopped

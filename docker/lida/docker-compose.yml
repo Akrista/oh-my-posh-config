@@ -1,0 +1,14 @@
+version: "3"
+networks:
+  default:
+    name: backend
+    external: true
+services:
+  lida:
+    container_name: lida
+    image: ghcr.io/akrista/lida:latest
+    restart: unless-stopped
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    ports:
+      - ${APP_PORT}
