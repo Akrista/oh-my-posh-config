@@ -204,3 +204,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 alias cat=bat
 # alias python=python3
 alias fd=fdfind
+export MODULAR_HOME="/home/akrista/.modular"
+export PATH="/home/akrista/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
