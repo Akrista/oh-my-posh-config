@@ -5,7 +5,7 @@ networks:
     external: true
 services:
   qbittorrent:
-    image: ghcr.io/linuxserver/qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:4.6.1
     container_name: qbittorrent
     environment:
       - PUID=1000
