@@ -5,11 +5,11 @@ services:
     container_name: surrealdb
     image: surrealdb/surrealdb:latest
     # Tho we are passing the USER and the PASS with the command, this is not secure for production
-    command: start --log debug --user ${SDB_USER} --pass ${SDB_PASS} file://database.db
+    command: start memory --strict --log debug --auth --user ${SDB_USER} --pass ${SDB_PASS}
     ports:
       - ${SDB_PORT}
-    volumes:
-      - ./data/database.db:/database.db
+    # volumes:
+    #   - ./data:/data
     restart: unless-stopped
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
