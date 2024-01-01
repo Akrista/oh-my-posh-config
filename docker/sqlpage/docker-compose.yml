@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  default:
+    name: frontend
+    external: true
+services:
+  sqlpage:
+    image: lovasoa/sqlpage
+    container_name: sqlpage
+    restart: unless-stopped
+    volumes:
+      - ./data:/var/www
+    ports:
+      - 7395:8080
