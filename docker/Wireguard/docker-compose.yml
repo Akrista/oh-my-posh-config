@@ -18,6 +18,7 @@ services:
       - SERVERPORT=${WIRE_SERVER_PORT}
       - PEERS=${WIRE_PEERS}
       - PEERSDNS=${WIRE_PEERS_DNS}
+      - ALLOWEDIPS=${WIRE_ALLOWEDIPS}
       #- INTERNAL_SUBNET=
     volumes:
       - ./config:/config
