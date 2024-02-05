@@ -5,7 +5,7 @@ networks:
     external: true
 services:
   bytebase:
-    image: bytebase/bytebase:2.13.1
+    image: bytebase/bytebase:2.13.2
     restart: unless-stopped
     healthcheck:
       disable: true
