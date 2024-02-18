@@ -6,6 +6,7 @@ networks:
 services:
   bytebase:
     image: bytebase/bytebase:2.13.2
+    container_name: bytebase
     restart: unless-stopped
     healthcheck:
       disable: true

@@ -5,7 +5,7 @@ networks:
     external: true
 services:
   heimdall:
-    image: ghcr.io/linuxserver/heimdall
+    image: ghcr.io/linuxserver/heimdall:development
     container_name: heimdall
     environment:
       - PUID=1000
