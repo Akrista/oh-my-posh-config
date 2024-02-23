@@ -1,0 +1,21 @@
+version: "3.8"
+networks:
+  default:
+    name: frontend
+    external: true
+services:
+  mojo:
+    container_name: mojo
+    image: akrista/mojosdk
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - AUTH_KEY=${AUTH_KEY}
+      no_cache: true
+    ports:
+      - 8888:8888
+    volumes:
+      - ./data:/mojo
+    working_dir: /mojo
+    restart: unless-stopped

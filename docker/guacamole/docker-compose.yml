@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  default:
+    name: frontend
+    external: true
+services:
+  guacamole:
+    image: abesnier/guacamole
+    container_name: guacamole
+    ports:
+      - 9600:8080
+    volumes:
+      - ./data:/config
+    restart: unless-stopped

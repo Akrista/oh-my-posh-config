@@ -1,0 +1,19 @@
+version: "3"
+networks:
+  default:
+    name: frontend
+    external: true
+services:
+  rstudio:
+    image: rocker/rstudio
+    container_name: rstudio
+    ports:
+      - "8787:8787"
+    restart: unless-stopped
+    volumes:
+      - ./config:/home/rstudio/.config/rstudio
+      - ./data:/home/rstudio/workspace
+    environment:
+      PASSWORD: ${PASSWORD}
+      USERID: 1000
+      GROUPID: 1000

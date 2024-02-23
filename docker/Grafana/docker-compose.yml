@@ -6,6 +6,7 @@ networks:
 services:
   loki:
     image: grafana/loki
+    container_name: loki
     volumes:
       - ./loki:/etc/loki
     ports:
