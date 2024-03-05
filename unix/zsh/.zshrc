@@ -206,3 +206,4 @@ alias cat=bat
 alias fd=fdfind
 export MODULAR_HOME="/home/akrista/.modular"
 export PATH="/home/akrista/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH=$HOME/.dotnet/tools:$PATH
