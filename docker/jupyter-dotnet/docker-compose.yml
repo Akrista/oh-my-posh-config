@@ -1,0 +1,14 @@
+version: "3.8"
+networks:
+  default:
+    name: frontend
+    external: true
+services:
+  jupyter-dotnet:
+    container_name: jupyter-dotnet
+    image: pocki/minimal-dotnet:20230315
+    ports:
+      - 8888:8888
+    volumes:
+      - ./data:/home/jovyan/Notebooks
+    restart: unless-stopped
